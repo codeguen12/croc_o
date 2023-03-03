@@ -1,0 +1,651 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+/********************************************************************************* Fenêtres modale *******************************************************************************************/
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.modal-container.active {
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #333333d3;
+}
+
+.modal {
+    padding: 30px;
+
+    background: #f2f2f2;
+    border-radius: 5px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 1.7vw;
+    cursor: pointer;
+}
+
+.modal .close-btn:hover {
+    color: #3498db;
+}
+
+.modal .text {
+    font-size: 1.7vw;
+    font-weight: 600;
+    text-align: center;
+}
+
+.modal form {
+    margin-top: -20px;
+}
+
+.modal form .data {
+    height: 45px;
+    width: 100%;
+    margin: 40px 0;
+}
+
+form .data label {
+    font-size: 1.7vw;
+}
+
+form .data input {
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 1.7vw;
+    border: 1px solid silver;
+}
+
+form .data input:focus {
+    border-color: #3498db;
+    border-bottom-width: 2px;
+}
+
+form .forgot-pass {
+    margin-top: -8px;
+}
+
+form .forgot-pass a {
+    color: #3498db;
+    font-size: 1.7vw;
+    text-decoration: none;
+}
+
+form .forgot-pass a:hover {
+    text-decoration: underline;
+}
+
+form .btn {
+    margin: 30px 0;
+    height: 45px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+form .btn .inner {
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    z-index: -1;
+    background: -webkit-linear-gradient(right, #a9bf04, #214001, #a9bf04, #214001);
+    transition: all 0.4s;
+}
+
+form .btn:hover .inner {
+    left: 0;
+}
+
+form .btn button {
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.7vw;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+form .signup-link {
+    text-align: center;
+    font-size: 1.7vw;
+}
+
+form .signup-link a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+form .signup-link a:hover {
+    text-decoration: underline;
+}
+
+/********************************************************************************** Barre de navigation *****************************************************************************/
+
+nav {
+    font-family: 'Gloria Hallelujah', cursive;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    background: #f2f2f2;
+    box-shadow: inset 0px -1px 0px #c5c5c5;
+
+}
+
+.navbar.active {
+    position: static;
+}
+
+.icon-croco {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin: 0px;
+}
+
+.icon-croco img {
+    width: 130px;
+}
+
+.burger {
+    display: none;
+}
+
+.navlinks-container a {
+    margin: 0 10px;
+    font-size: 1.2vw;
+    font-weight: 500;
+    text-decoration: none;
+    color: #214001;
+    display: inline-block;
+    position: relative;
+}
+
+.navlinks-container a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: #214001;
+    transition: transform 0.3s ease-out;
+}
+
+.navlinks-container a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-authentication {
+    margin-left: auto;
+}
+
+.sign-btns button {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 1.2vw;
+    min-width: 90px;
+    padding: 5px 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 10px 10px 10px 10px;
+    border: none;
+}
+
+.sign-btns button:hover {
+    border: none;
+    border-radius: 10px 10px 10px 10px;
+    background: #a9bf04;
+    transition: 1s;
+}
+
+.sign-user {
+    display: none;
+}
+
+/********************************************************************************** contenu principal ***************************************************************************/
+section {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+}
+
+/*********************************************************************************** section slider *****************************************************************************/
+#SLIDE_BG {
+
+    width: 100%;
+    height: 100vh;
+    padding: 0px 0px;
+    color: #fcfcfc;
+    font-size: 30px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: slideBg 10s linear infinite 6s;
+    animation-timing-function: ease-in-out;
+    background-image: url(image/001.jpg);
+}
+
+@keyframes slideBg {
+    0% {
+        background-image: url(image/001.jpg);
+    }
+
+    25% {
+        background-image: url(image/002.jpg);
+    }
+
+    50% {
+        background-image: url(image/003.jpg);
+    }
+
+    75% {
+        background-image: url(image/004.jpg);
+    }
+
+    100% {
+        background-image: url(image/001.jpg);
+    }
+}
+
+#SLIDE_BG h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fcfcfc;
+}
+
+/********************************************************************************* section présentation **********************************************************************************/
+
+#Présentation {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    padding: 30px 0;
+}
+
+#présentation h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#présentation p {
+    margin-bottom: 20px;
+}
+
+/********************************************************************************** section horaire *************************************************************************************/
+#horaire {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: #fcfcfc;
+    font-size: 18px;
+    padding: 30px 0;
+    background: rgb(33, 64, 1);
+    background: linear-gradient(90deg, rgba(33, 64, 1, 1) 0%, rgba(70, 115, 2, 1) 35%, rgba(169, 191, 4, 1) 100%);
+}
+
+#horaire h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fcfcfc;
+}
+
+#horaire table {
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+#horaire th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#horaire th {
+    background-color: #f2f2f2;
+    color: rgb(1, 1, 1);
+}
+
+/************************************************************************************ section menu ******************************************************************************************/
+
+.bouton {
+    text-decoration: none;
+    padding: 3px 20px;
+    font-size: 2em;
+    color: #FFFFFF;
+    background-color: #899F11;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border: 4px solid #FFFFFF;
+    box-shadow: 3px 3px 12px #444444;
+    -webkit-box-shadow: 3px 3px 12px #444444;
+    -moz-box-shadow: 3px 3px 12px #444444;
+}
+
+
+.bouton:hover {
+    padding: 3px 20px;
+    box-shadow: 1px 1px 4px #777777;
+    -webkit-box-shadow: 1px 1px 4px #777777;
+    -moz-box-shadow: 1px 1px 4px #777777;
+}
+
+/********************************************************************************** section services ******************************************************************************************/
+
+#services {
+    background: rgb(33, 64, 1);
+    background: linear-gradient(90deg, rgba(33, 64, 1, 1) 0%, rgba(70, 115, 2, 1) 35%, rgba(169, 191, 4, 1) 100%);
+    text-align: center;
+    display: inline-block;
+    color: #fcfcfc;
+    padding: 0px;
+    height: 100vh;
+    width: 100%;
+
+}
+
+#services h2 {
+    width: 100%;
+    padding-top: 200px;
+}
+
+.service {
+    display: inline-block;
+    margin: 60px;
+    text-align: center;
+    color: #fcfcfc;
+}
+
+.service-icon {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #fcfcfc;
+}
+
+/****************************************************************************** section Géolocalisation *************************************************************************************/
+
+iframe {
+    padding: 0;
+    margin: 0;
+    width: 90%;
+}
+
+article img {
+    width: 100%;
+}
+
+/*********************************************************************************** pied de page ******************************************************************************************/
+
+footer {
+    width: 100%;
+    position: sticky;
+    text-align: center;
+    background: black;
+    color: #fcfcfc;
+    opacity: 0.9;
+    font-family: 'Font Awesome 5 Free';
+}
+
+footer h2 {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+/******************************************************************************* formulaire de contact *************************************************************************************/
+
+#formulaire {
+    margin: 0 auto;
+    width: 70%;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+input,
+textarea,
+#Envoyer {
+    border: none;
+    width: 70%;
+    padding: 15px 10px;
+    margin: 1px 0;
+    font-size: 1.2em;
+    font-family: 'Gloria Hallelujah', cursive;
+    border-radius: 8px;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+footer #Envoyer {
+    font-size: 1.5em;
+    background-color: #f2f2f2;
+}
+
+footer #Envoyer:hover {
+    background-color: #214001;
+    color: #fffae1;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+/********************************************************************************* lien de partage ********************************************************************************************/
+footer .share-links {
+    display: flex;
+    justify-content: center;
+}
+
+footer .share-links a {
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.share-links i {
+    font-size: 30px;
+}
+
+.share-links i:hover {
+    font-size: 35px;
+    transition: 0.4s ease-in-out;
+}
+
+.facebook i {
+    color: #3b5998;
+
+}
+
+.twitter i {
+    color: #1da1f2;
+
+}
+
+.linkedin i {
+    color: #0077b5;
+
+}
+
+.instagram i {
+    color: #e1306c;
+
+}
+
+.whatsapp i {
+    color: #25D366;
+
+}
+
+/********************************************************************************** responsive ************************************************************************************************/
+
+@media (max-width:900px) {
+    nav {
+        padding: 15px 20px;
+        position: relative;
+    }
+
+    .main-navlinks span {
+        font-size: 22px;
+    }
+
+    /**************************************************************************** menu hamburger **********************************************************************************************/
+    .burger {
+        width: 30px;
+        height: 15px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        background: #f2f2f2;
+        border: none;
+    }
+
+    .burger span {
+        width: 100%;
+        height: 3px;
+        background: #214001;
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .burger span::before,
+    .burger span::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: #214001;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .burger span::before {
+        transform: translateY(-10px);
+    }
+
+    .burger span::after {
+        transform: translateY(10px);
+    }
+
+    .burger.active span {
+        background: transparent;
+    }
+
+    .burger.active span::before {
+        transform: translateY(0px) rotateZ(45deg);
+    }
+
+    .burger.active span::after {
+        transform: translateY(0px) rotateZ(-45deg);
+    }
+
+    .navlinks-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        background: #f2f2f2;
+        top: 100%;
+        left: 0;
+        height: 100vh;
+        padding: 15px 50px 15px 20px;
+        border-right: 1 solid #c5c5c6;
+        transform: translate(-100%);
+        transition: transform 0.3s ease-out;
+    }
+
+    .open {
+        transform: translate(0%);
+    }
+
+    .navlinks-container a {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .sign-btns {
+        display: none;
+    }
+
+    .sign-user {
+        display: block;
+        cursor: pointer;
+        border: none;
+    }
+
+    .sign-user img {
+        width: 20px;
+    }
+
+    .icon-croco {
+        order: 2;
+        margin: 0 auto;
+    }
+
+    .main-navlinks {
+        order: 1;
+    }
+
+    .nav-authentication {
+        order: 3;
+        margin-left: 0;
+    }
+
+    #services h2 {
+        width: 100%;
+        padding-top: 20px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .icon-croco img {
+        width: 100px;
+    }
+}

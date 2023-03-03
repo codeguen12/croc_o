@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="image/Croc'O.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>croc'o</title>
+</head>
+
+<body>
+
+<!--Fenêtres modale-->
+
+    <div class="modal-container">
+        <div class="overlay modal-trigger"></div>
+        <div class="modal">
+            <div><label class="close-btn fas fa-times modal-trigger" title="close"></label></div>
+            <h2>Se connecter</h2>
+            <form action="#">
+                <div class="data">
+                    <label>adresse e-mail ou numéro de téléphone</label>
+                    <input type="text" required>
+                </div>
+                <div class="data">
+                    <label>Mot de passe</label>
+                    <input type="password" required>
+                </div>
+                <div class="forgot-pass">
+                    <a href="#">mot de passe oublié?</a>
+                </div>
+                <div class="btn">
+                    <div class="inner"></div>
+                    <button type="submit">
+                        Connexion</button>
+                </div>
+                <div class="signup-link">
+                    Vous n'êtes pas membre? <a href="#">S'inscrire</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+<!-- Barre de navigation -->
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="icon-croco" aria-label="visiter la page d'accueil" aria-current="page">
+                <img src="image/icon-croco.png" alt="icon croco">
+            </a>
+            <div class="main-navlinks">
+                <button class="burger" type="button">
+                    <span></span>
+                </button>
+                <div class="navlinks-container">
+                    <a href="#SLIDE_BG" aria-current="page">Accueil</a>
+                    <a href="#Présentation">Présentations</a>
+                    <a href="#horaire">Horaire</a>
+                    <a href="#MENU">Menu</a>
+                    <a href="#services">Services</a>
+                    <a href="#6">Nous trouver</a>
+                    <a href="#7">Contact</a>
+                </div>
+            </div>
+            <div class="nav-authentication ">
+                <a href="#" class="sign-user modal-trigger" aria-label="sign in page">
+                    <img src="image/utilisateur.png" alt="user-icon">
+                </a>
+                <div class="sign-btns">
+                    <button class="modal-btn modal-trigger">S'identifier</button>
+                    <button type="button">S'inscrire</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<!-- contenu principal -->
+
+    <main>
+
+<!-- section slider -->
+
+        <section id="SLIDE_BG">
+            <H1>EN CE MOMENT</H1>
+            <img src="image/logo-CROC_O.png" alt="logo croc'o">
+            <div id="openingHours"></div>
+        </section>
+
+<!-- section présentation -->
+
+        <section id="Présentation">
+            <h2>Bienvenue au Croc'o</h2>
+            <p>Notre fast-food spécialisé dans les sandwiches géants à partager entre amis ou en famille.</p>
+            <p>Nous avons choisi de vous faire découvrir des recettes originales et savoureuses à base de produits frais
+                et de qualité.</p>
+            <p>Notre mascotte, un crocodile rigolo et espiègle, vous accompagnera tout au long de votre visite et vous
+                promet de délicieux moments de convivialité.</p>
+            <p>Venez vite découvrir les spécialités de Croc'o, des sandwichs à couper le souffle !</p>
+            <p>Notre équipe est impatiente de vous accueillir pour un repas convivial et délicieux.</p>
+        </section>
+
+<!-- section horaire -->
+
+        <section id="horaire">
+            <h2>Horaires d'ouverture</h2>
+            <table>
+                <tr>
+                    <th>Jour</th>
+                    <th>Heures d'ouverture</th>
+                </tr>
+                <tr>
+                    <td>Lundi</td>
+                    <td>11h - 23h</td>
+                </tr>
+                <tr>
+                    <td>Mardi</td>
+                    <td>11h - 23h</td>
+                </tr>
+                <tr>
+                    <td>Mercredi</td>
+                    <td>11h - 23h</td>
+                </tr>
+                <tr>
+                    <td>Jeudi</td>
+                    <td>11h - 23h</td>
+                </tr>
+                <tr>
+                    <td>Vendredi</td>
+                    <td>11h - 23h</td>
+                </tr>
+                <tr>
+                    <td>Samedi</td>
+                    <td>11h - 23h</td>
+                </tr>
+                <tr>
+                    <td>Dimanche</td>
+                    <td>11h - 23h</td>
+                </tr>
+            </table>
+        </section>
+
+<!-- section menu -->
+
+        <section id="MENU">
+            <H2>NOTRE MENU !</H2>
+            <a class="bouton" href="image/menu.jpg">Menu</a>
+        </section>
+
+<!-- section services -->
+
+        <section id="services">
+            <h2>Nos Services</h2>
+            <div class="service">
+                <div class="service-icon">
+                    <i class="fas fa-snowflake"></i>
+                </div>
+                <h3>Salle climatisée</h3>
+            </div>
+            <div class="service">
+                <div class="service-icon">
+                    <i class="fas fa-parking"></i>
+                </div>
+                <h3>Parking</h3>
+            </div>
+            <div class="service">
+                <div class="service-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Manger en terrasse</h3>
+            </div>
+            <div class="service">
+                <div class="service-icon">
+                    <i class="fas fa-wifi"></i>
+                </div>
+                <h3>Wi-Fi</h3>
+            </div>
+        </section>
+
+<!-- section Géolocalisation -->
+
+        <section id="6">
+            <H2>Nous trouver</H2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.1564526614966!2d3.847621914878613!3d43.603283963676205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6ae5c9943ee93%3A0x761436d08d3c4ebb!2s7%20Rue%20des%20P%C3%A9tunias%2C%2034070%20Montpellier!5e0!3m2!1sfr!2sfr!4v1675115506927!5m2!1sfr!2sfr"
+                width="1200" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </main>
+
+<!-- pied de page -->
+
+    <footer id="7">
+        <h2 id="contact">Contacter Nous</h2>
+
+<!-- formulaire de contact -->
+
+        <form id="formulaire">
+            <input placeholder="Nom">
+            <input placeholder="E-mail">
+            <textarea placeholder="Votre message ici.."></textarea>
+            <button id="Envoyer">Envoyer</button>
+        </form>
+
+<!-- lien de partage -->
+
+        <div class="share-links">
+            <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a class="twitter" href="https://twitter.com/intent/tweet?url=URL_TO_SHARE">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?url=URL_TO_SHARE">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a class="instagram" href="https://instagram.com/share?url=URL_TO_SHARE">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a class="whatsapp" href="https://api.whatsapp.com/send?text=URL_TO_SHARE">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <a href="">Conçu par Salim Guendouz. Tous droits réservés.</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
